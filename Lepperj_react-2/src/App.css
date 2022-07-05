@@ -16,11 +16,6 @@ body {
   color: black;
 }
 
-
-.App-link {
-  color: #61dafb;
-}
-
 td, th {
   border: 1px solid #ddd;
   padding: 8px;
@@ -36,4 +31,15 @@ th {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+.link {
+  text-decoration: "none!important";
+  color: #FFF;
+  transition: 1s;
+}
+.link:hover {
+   color: #00F;
+   text-decoration: "none!important";
+   opacity: .5;
 }

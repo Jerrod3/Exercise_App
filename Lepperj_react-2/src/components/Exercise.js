@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdDeleteForever, MdEdit } from 'react-icons/md'
-
-function Exercise({ exercise, onDelete, onEdit }) {
+import lady from '../img/lady.jpg'
+function Exercise({ exercise, onDelete, onEdit, setBackgroundImg }) {
     return (
         <tr>
             <td>{exercise.name}</td>
@@ -9,7 +9,7 @@ function Exercise({ exercise, onDelete, onEdit }) {
             <td>{exercise.weight}</td>
             <td>{exercise.unit}</td>
             <td>{exercise.date}</td>
-            <td><MdEdit onClick={ () => onEdit(exercise)}/></td>
+            <td><MdEdit onClick={ () => { onEdit(exercise); setBackgroundImg(lady);}}/></td>
             <td>< MdDeleteForever onClick={ () => onDelete(exercise._id)}/></td>
         </tr>
     );

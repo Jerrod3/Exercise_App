@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ExerciseList from '../components/ExerciseList';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function HomePage({setExerciseToEdit}) {
+function HomePage({setExerciseToEdit, setBackgroundImg}) {
     const [exercises, setExercises] = useState([]);
     const history = useHistory();
 
@@ -35,8 +34,13 @@ function HomePage({setExerciseToEdit}) {
 
     return (
         <>
-            <h2>List of Exercises</h2>
-            <ExerciseList exercises={exercises} onDelete={onDelete} onEdit={onEdit}></ExerciseList>
+        <div class="col-sm-6 d-flex justify-content-center">
+            <div class="card text-white text-center bg-dark mb-3" style={{ maxWidth: 500 }}>
+                <div class="card-body"></div>
+                    <h2 className={`text-capitalize h1 mb-4 w-100 text-center`}>List of Exercises</h2>
+                </div>
+            </div>
+            <ExerciseList exercises={exercises} onDelete={onDelete} onEdit={onEdit} setBackgroundImg={setBackgroundImg}></ExerciseList>
         </>
     );
 }

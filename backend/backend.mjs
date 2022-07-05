@@ -1,9 +1,9 @@
-// Get the mongoose object2
+// Get the mongoose object
 import mongoose from 'mongoose';
 
-// Prepare to the database movies_db in the MongoDB server running locally on port 27017
+// Prepare the database in the MongoDB server running locally on port 27017
 mongoose.connect(
-    'mongodb://localhost:27017/excercise_db',
+    'mongodb://0.0.0.0:27017/excercise_db',
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

@@ -6,34 +6,69 @@ import HomePage from './pages/HomePage';
 import AddExercisePage from './pages/AddExercisePage';
 import EditExercisePage from './pages/EditExercisePage';
 import { useState } from 'react';
+import homePageImg from "./img/weights.jpg"
+import addExcerciseImg from "./img/man.jpg"
 
 function App() {
     const [exerciseToEdit, setExerciseToEdit] = useState();
+    const[backgroundImg, setBackgroundImg] = useState(homePageImg);
+    const[hover1,setHover1] = useState()
+    const[hover2,setHover2] = useState()
+  
+
   return (
-    <header>
-      <h1> Exercise Log</h1>
-      <p>A full stack MERN app that records exercises</p>
-    <main>
-    <div className="App">
-      <Router>
-        <h1><Link to="/">Homepage</Link></h1>
-        <h1><Link to="/add-exercise">Add an exercise</Link></h1>
-        <div className="App-header">
-          <Route path="/" exact>
-            <HomePage setExerciseToEdit={setExerciseToEdit}/>
-          </Route>
-          <Route path="/add-exercise">
-            <AddExercisePage />
-          </Route>
-          <Route path="/edit-exercise">
-            <EditExercisePage exerciseToEdit={exerciseToEdit} />
-          </Route>
+<div class="bg-image" 
+            style={{ backgroundImage: `url(${backgroundImg}`,backgroundRepeat:"no-repeat", backgroundSize: "cover"  }} >
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div class="col-sm-6 d-flex justify-content-center">
+          <div class="card text-white text-center bg-dark mb-3" style={{ maxWidth: 500 }}>
+            <div class="card-body">
+              <h1 class="card-title"> Exercise Log</h1>
+                <p class="card-text">A full stack MERN app that records exercises</p>
+              </div>
+            </div>
           </div>
-      </Router>
+        <main>
+          <div className="App">
+            <Router>
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-6 d-flex justify-content-center">
+                <div class="card text-white text-center bg-dark mb-3" style={{ maxWidth: 500 }}>
+                  <div class="card-body">
+                    <h1 class="card-title"><Link style={{textDecoration: 'none',  color: hover1 ? 'red' : 'white'}}
+                     onClick={() => setBackgroundImg(homePageImg)} to="/" onMouseEnter={() => setHover1(true)} onMouseLeave={() => setHover1(false) }
+                     >Homepage</Link></h1>
+                 </div>
+              </div>
+            </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <div class="col-sm-6 d-flex justify-content-center">
+                <div class="card text-white text-center bg-dark mb-3" style={{ maxWidth: 500 }}>
+                  <div class="card-body"></div>
+                    <h1 class="card-title"><Link to="/add-exercise" style={{textDecoration: 'none',  color: hover2 ? 'red' : 'white'}} onClick={() => setBackgroundImg(addExcerciseImg)} onMouseEnter={() => setHover2(true)} onMouseLeave={() => setHover2(false) }>Add an exercise</Link></h1>
+               </div>
+               </div>
+               </div>
+                <div className="App-header">
+                 <Route path="/" exact>
+                    <HomePage setExerciseToEdit={setExerciseToEdit} setBackgroundImg={setBackgroundImg}/>
+                  </Route>
+                  <Route path="/add-exercise">
+                    <AddExercisePage/>
+                  </Route>
+                  <Route path="/edit-exercise">
+                    <EditExercisePage exerciseToEdit={exerciseToEdit}/>
+                  </Route>
+                </div>
+            </Router>
+          </div>
+        </main>
     </div>
-    </main>
-    <footer>© 2022 Jerrod Lepper</footer>
-    </header>
+  </div>
+  <footer className='text-center'>© 2022 Jerrod Lepper</footer>
+</div>
   );
 }
 
