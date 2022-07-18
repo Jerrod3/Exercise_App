@@ -5,7 +5,7 @@
     "scripts": {
     "build": "cd Lepperj_react-2 && npm run build",
     "install-client": "cd Lepperj_react-2 && npm install",
-    "heroku-postbuild": "npm run install-Lepperj_react-2t && npm run build",
+    "heroku-postbuild": "npm run install-Lepperj_react-2 && npm run build",
     "server": "cd backend nodemon controller_exercises.mjs",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
