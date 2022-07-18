@@ -7,7 +7,9 @@
   },
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node controller_exercises.mjs",
-      "heroku-postbuild": "cd Lepperj_react-2 && npm install && npm run build"
+      "start": "npm start --prefix backend",
+      "install-client": "cd Lepperj_react-2 && npm install && npm run build && cd ..",
+      "install-server": "cd backend && npm install && cd .. ",
+      "heroku-postbuild": "npm run install-client && npm run install-server"
   }
 }
