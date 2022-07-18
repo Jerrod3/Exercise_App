@@ -1,1 +1,2 @@
-web: node ./app.js
+web: sh -c 'cd ./backend/ && npm start'
+web: sh -c 'cd ./Lepperj_react2/ && npm start'
