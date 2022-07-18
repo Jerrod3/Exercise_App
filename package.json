@@ -10,6 +10,6 @@
       "start": "npm start --prefix backend",
       "install-client": "cd Lepperj_react-2 && npm install && npm run build && cd ..",
       "install-server": "cd backend && npm install && cd .. ",
-      "heroku-postbuild": "npm run install-client && npm run install-server"
+      "heroku-postbuild": "npm run install-server && npm run install-client"
   }
 }
