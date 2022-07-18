@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
-export const EditExercisePage = ({exerciseToEdit}) => {
+export const EditExercisePage = ({exerciseToEdit,cardDetails}) => {
 
     const [name, setName] = useState(exerciseToEdit.name);
     const [reps, setReps] = useState(exerciseToEdit.reps);
@@ -29,7 +29,17 @@ export const EditExercisePage = ({exerciseToEdit}) => {
     };
     return (
         <div>
-            <h1>Edit Exercise</h1>
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-6 d-flex justify-content-center">
+                        <div class="card text-white text-center bg-dark mb-3" style={cardDetails}>
+                            <div class="card-body">
+                                <h1 class="card-title"> Edit Exercise</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <input
                 type="text"
                 value={name}
