@@ -11,7 +11,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.static(path.join(__dirname, 'Lepperj_react-2/build')));
+app.use(express.static(path.join(__dirname, 'app/Lepperj_react-2/build')));
 app.use(express.json());
 
 app.post('/exercises', (req, res) => {
