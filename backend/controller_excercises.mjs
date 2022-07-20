@@ -1,17 +1,9 @@
 import * as exercise from './backend.mjs';
 import express from 'express';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import path from 'path'
-
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-app.use(express.static(path.join(__dirname, 'app/Lepperj_react-2/build')));
 app.use(express.json());
 
 app.post('/exercises', (req, res) => {
@@ -66,10 +58,6 @@ app.delete('/exercises/:_id', (req, res) => {
             res.status(500).json({ Error: 'Request failed' });
         });
 });
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/Lepperj_react-2/build/index.html'));
-  });
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Server listening on port ${PORT}...`);
