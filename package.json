@@ -7,7 +7,7 @@
   },
     "scripts": {
       "start": "node backend",
-      "heroku-postbuild": "cd ./Lepperj_react-2 && npm install && npm run build"
+      "heroku-postbuild": "cd Lepperj_react-2 && npm install && npm run build"
       
   }
 }
