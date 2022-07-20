@@ -6,7 +6,7 @@
   "main": "controller_excercises.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon controller_excercises.mjs",
+    "start": "node controller_excercises.mjs",
     "heroku-postbuild": "cd Lepperj_react-2 && npm install && npm run build"
   },
   "author": "",
