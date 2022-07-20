@@ -6,9 +6,8 @@
     "backend": "^0.0.0"
   },
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node backend",
-      "build": "cd Lepperj_react-2/ && npm install && npm run build"
+      "heroku-postbuild": "cd Lepperj_react-2/ && npm install && npm run build"
       
   }
 }
