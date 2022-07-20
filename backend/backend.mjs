@@ -1,11 +1,16 @@
 // Get the mongoose object
 import mongoose from 'mongoose';
 
+const url = 'mongodb+srv://user:Password@exercises.0lzbj.mongodb.net/?retryWrites=true&w=majority'
+
 // Prepare the database in the MongoDB server running locally on port 27017
-mongoose.connect(
-    'mongodb://0.0.0.0:27017/excercise_db',
-    { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(url)
+    .then( () => {
+        console.log('Connected to the database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. n${err}`);
+    })
 
 // Connect to to the database
 const db = mongoose.connection;
